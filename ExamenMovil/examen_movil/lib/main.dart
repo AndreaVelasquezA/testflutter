@@ -1,6 +1,8 @@
 import 'package:examen_movil/controllers/auth_controller.dart';
+import 'package:examen_movil/listArticFavorit.dart';
 import 'package:examen_movil/listArticView.dart';
 import 'package:examen_movil/products.dart';
+import 'package:examen_movil/startview.dart';
 import 'package:flutter/material.dart';
 
 import 'listArticGrid.dart';
@@ -28,12 +30,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
     
-      initialRoute: "/listGrid",
+      initialRoute: "/startView",
       routes: {
         "/main": (context) => const MyHomePage(title: 'Flutter Demo Home Page'),    
         "/products": (context) => const ListArticView(),  
-        "/listGrid": (context) => const ListArticGrid(),    
-      
+        "/listGrid": (context) => const ListArticGrid(), 
+        "/startView": (context) => const StartView(),     
+        "/listarticfav": (context) => const ListArticFavoritGrid(),     
 
       },
     );

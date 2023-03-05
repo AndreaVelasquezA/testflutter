@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ListArticGrid extends StatefulWidget {
-  const ListArticGrid({Key? key}) : super(key: key);
+class ListArticFavoritGrid extends StatefulWidget {
+  const ListArticFavoritGrid({Key? key}) : super(key: key);
 
   @override
-  _ListArticGridState createState() => _ListArticGridState();
+  _ListArticFavoritGridState createState() => _ListArticFavoritGridState();
 }
 
-class _ListArticGridState extends State<ListArticGrid> {
+class _ListArticFavoritGridState extends State<ListArticFavoritGrid> {
   var status = 0;
   List<dynamic> productss = [];
 
@@ -130,7 +130,7 @@ class _ListArticGridState extends State<ListArticGrid> {
                             title: Text(
                               nombreArticle + "\n" + nombreVendedor,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 20,
                                 fontStyle: FontStyle.normal,
                                 color: Colors.black87,
                                 decoration: TextDecoration.none,
@@ -139,7 +139,7 @@ class _ListArticGridState extends State<ListArticGrid> {
                             subtitle: Text(
                               calificacion,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 20,
                                 fontStyle: FontStyle.normal,
                                 color: Colors.black87,
                                 decoration: TextDecoration.none,
