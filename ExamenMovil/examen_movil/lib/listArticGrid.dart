@@ -1,5 +1,7 @@
 import 'dart:convert';
-
+import 'package:examen_movil/controllers/changefav.dart';
+import 'package:examen_movil/controllers/auth_controller.dart';
+import 'package:examen_movil/controllers/changefav.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,9 +15,10 @@ class ListArticGrid extends StatefulWidget {
 class _ListArticGridState extends State<ListArticGrid> {
   var status = 0;
   List<dynamic> productss = [];
-
+  bool fav = false;
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
         appBar: AppBar(
           title: Text("Articulos"),
@@ -92,8 +95,11 @@ class _ListArticGridState extends State<ListArticGrid> {
                           // fixed width and height
                           child: Image.network(image)),
                       trailing: IconButton(
-                        icon: Icon(Icons.favorite_border, size: 20),
-                        onPressed: () {},
+                        icon: Icon((favorito.toString() == "0")? Icons.favorite_border : Icons.favorite, size: 20,),
+                        onPressed: () {
+                         
+                        },
+                        
                       ),
                     ),
                   );
@@ -146,7 +152,7 @@ class _ListArticGridState extends State<ListArticGrid> {
                               ),
                             ),
                             trailing: IconButton(
-                              icon: Icon(Icons.favorite_border, size: 20),
+                              icon: Icon((favorito.toString() == "0")? Icons.favorite_border : Icons.favorite, size: 20,),
                               onPressed: () {},
                             ),
                           )
@@ -162,6 +168,8 @@ class _ListArticGridState extends State<ListArticGrid> {
         backgroundColor: Color.fromARGB(31, 206, 100, 255),
       ),);
   }
+
+ 
 
   void fetchUsers() async {
     print('llamando');
@@ -199,8 +207,12 @@ final List<IconData> icons = <IconData>[
 
 ];*/
 
+
+
 @override
 State<StatefulWidget> createState() {
   // TODO: implement createState
   throw UnimplementedError();
 }
+
+

@@ -119,7 +119,7 @@ class StartView extends StatelessWidget {
                           width: 300,
                           child: ElevatedButton(
                             onPressed: () {
-                            Navigator.pushNamed(context, '/listGrid');
+                             Navigator.pushNamed(context, '/listArticFavor');
                             },
                             style: ButtonStyle(
                                 foregroundColor:
@@ -152,7 +152,7 @@ class StartView extends StatelessWidget {
                           width: 200,
                           child: ElevatedButton(
                             onPressed: () {
-                            Navigator.pushNamed(context, '/listGrid');
+                            
                             },
                             style: ButtonStyle(
                                 foregroundColor:

@@ -18,7 +18,7 @@ class _ListArticFavoritGridState extends State<ListArticFavoritGrid> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Articulos"),
+          title: Text("Favoritos"),
           backgroundColor:   Color.fromARGB(255, 140, 0, 255),
           actions: [
             IconButton(
@@ -92,7 +92,7 @@ class _ListArticFavoritGridState extends State<ListArticFavoritGrid> {
                           // fixed width and height
                           child: Image.network(image)),
                       trailing: IconButton(
-                        icon: Icon(Icons.favorite_border, size: 20),
+                        icon: Icon((favorito.toString() == "0")? Icons.favorite_border : Icons.favorite, size: 20,),
                         onPressed: () {},
                       ),
                     ),
@@ -146,7 +146,7 @@ class _ListArticFavoritGridState extends State<ListArticFavoritGrid> {
                               ),
                             ),
                             trailing: IconButton(
-                              icon: Icon(Icons.favorite_border, size: 20),
+                               icon: Icon((favorito.toString() == "0")? Icons.favorite_border : Icons.favorite, size: 20,),
                               onPressed: () {},
                             ),
                           )
@@ -165,7 +165,7 @@ class _ListArticFavoritGridState extends State<ListArticFavoritGrid> {
 
   void fetchUsers() async {
     print('llamando');
-    const url = 'https://api.npoint.io/1705c1d0425eed01306c';
+    const url = 'https://api.npoint.io/4ebf6ee750f185fb3b78';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     final body = response.body;
